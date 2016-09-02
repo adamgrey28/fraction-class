@@ -98,7 +98,7 @@ function Fraction (numerator, denumerator) {
     if (gcd > 1)
       return `${sumRes / gcd}/${lcm / gcd}`;
     return `${sumRes}/${lcm}`;
-	}
+  }
 
 
   this.minus = function (numer2, denum2 = 1) { 
