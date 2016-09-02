@@ -1,15 +1,15 @@
 'use strict';
 
 /*
-*	Class Fraction takes 2 integer args: numerator, denumerator > 0. 
-*	Interfaces:
-*	  1. get(); Returns the fraction as string
-*	  2. set(numerator, denumerator > 0); Create new fraction in same instance
-*	    Next methods returns result of arifmethic operation of two fractions and reduces result: 
-*	      3. plus(numerator, denumerator > 0); Returns sum 
-*	      4. minus(numerator, denumerator > 0); Returns difference 
-*	      5. mult(numerator, denumerator > 0); Returns product 
-*	      6. div(numerator, denumerator > 0); Returns quotient 
+*  Class Fraction takes 2 integer args: numerator, denumerator > 0. 
+*  Interfaces:
+*    1. get(); Returns the fraction as string
+*    2. set(numerator, denumerator > 0); Create new fraction in same instance
+*      Next methods returns result of arifmethic operation of two fractions and reduces result: 
+*        3. plus(numerator, denumerator > 0); Returns sum 
+*        4. minus(numerator, denumerator > 0); Returns difference 
+*        5. mult(numerator, denumerator > 0); Returns product 
+*        6. div(numerator, denumerator > 0); Returns quotient 
 */
 
 
