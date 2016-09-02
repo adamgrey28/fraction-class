@@ -1,18 +1,5 @@
 'use strict';
 
-/*
-*  Class Fraction takes 2 integer args: numerator, denumerator > 0. 
-*  Interfaces:
-*    1. get(); Returns the fraction as string
-*    2. set(numerator, denumerator > 0); Create new fraction in same instance
-*      Next methods returns result of arifmethic operation of two fractions and reduces result: 
-*        3. plus(numerator, denumerator > 0); Returns sum 
-*        4. minus(numerator, denumerator > 0); Returns difference 
-*        5. mult(numerator, denumerator > 0); Returns product 
-*        6. div(numerator, denumerator > 0); Returns quotient 
-*/
-
-
 function Fraction (numerator, denumerator) {
   if ( !argsIsIntegers(numerator, denumerator) || denumerator === 0)
 	  throw new Error('Only integers > 0!'); 
@@ -21,7 +8,7 @@ function Fraction (numerator, denumerator) {
   this.denum = denumerator;
   let that = this; 
 	
-  function argsIsIntegers(...args) { //Check arguments for integers 
+  function argsIsIntegers(...args) { //Check arguments for integers
     for (let item of args) {
       if ( !Number.isInteger(item) )
         return false;
@@ -42,30 +29,30 @@ function Fraction (numerator, denumerator) {
 	
 	
   this.mult = function (numer2, denum2 = 1) {
-    if ( !argsIsIntegers(arguments) )
+    if ( !argsIsIntegers(numer2, denum2) || denum2 === 0 )
     throw new Error('Only integers > 0!');
  		
-    let foo = this.numer * numer2,
-        bar = this.denum * denum2,
-        gcd = this.gcdEuclid(foo, bar);
+    let newNumer = this.numer * numer2,
+        newDenum = this.denum * denum2,
+        gcd = gcdEuclid(newNumer, newDenum);
 				
     if (gcd > 1)
-      return `${foo / gcd}/${bar / gcd}`;
-    return `${foo}/${bar}`;
+      return `${newNumer / gcd}/${newDenum / gcd}`;
+    return `${newNumer}/${newDenum}`;
   }
 	
 	
   this.div = function(numer2, denum2 = 1) {
-    if ( !argsIsIntegers(arguments) )
+    if ( !argsIsIntegers(numer2, denum2) || denum2 === 0 )
       throw new Error('Only integers > 0!'); 		
 		
-    let foo = this.numer * denum2,
-        bar = this.denum * numer2,
-        gcd = this.gcdEuclid(foo, bar);
+    let newNumer = this.numer * denum2,
+        newDenum = this.denum * numer2,
+        gcd = gcdEuclid(newNumer, newDenum);
 				
     if (gcd > 1)
-      return `${foo / gcd}/${bar / gcd}`;
-    return `${foo}/${bar}`;
+      return `${newNumer / gcd}/${newDenum / gcd}`;
+    return `${newNumer}/${newDenum}`;
   }
 	
 	
@@ -116,3 +103,6 @@ function Fraction (numerator, denumerator) {
     return `${sumRes}/${lcm}`;
   }
 }
+
+var foo = new Fraction(2, 3);
+console.log(foo.mult(5, 8));
