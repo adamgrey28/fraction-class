@@ -103,6 +103,3 @@ function Fraction (numerator, denumerator) {
     return `${sumRes}/${lcm}`;
   }
 }
-
-var foo = new Fraction(2, 3);
-console.log(foo.mult(5, 8));
