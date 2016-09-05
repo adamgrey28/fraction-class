@@ -2,7 +2,7 @@
 
 function Fraction (numerator, denumerator) {
   if ( !argsIsIntegers(numerator, denumerator) || denumerator === 0)
-	  throw new Error('Only integers > 0!'); 
+    throw new Error('Only integers > 0!'); 
 		
   this.numer = numerator;
   this.denum = denumerator;
@@ -30,7 +30,7 @@ function Fraction (numerator, denumerator) {
 	
   this.mult = function (numer2, denum2 = 1) {
     if ( !argsIsIntegers(numer2, denum2) || denum2 === 0 )
-    throw new Error('Only integers > 0!');
+      throw new Error('Only integers > 0!');
  		
     let newNumer = this.numer * numer2,
         newDenum = this.denum * denum2,
